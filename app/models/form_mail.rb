@@ -1,0 +1,2 @@
+class FormMail < ApplicationRecord
+end
