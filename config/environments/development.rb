@@ -49,7 +49,8 @@ Rails.application.configure do
       :user_name            => ENV["FROM_EMAIL"],
       :password             => ENV["EMAIL_PASSWORD"],
       :authentication       => "plain",
-      :enable_starttls_auto => true
+      :enable_starttls_auto => true,
+      :TLS                  => true
     }
 
   # Print deprecation notices to the Rails logger.

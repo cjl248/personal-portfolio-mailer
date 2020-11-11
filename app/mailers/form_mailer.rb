@@ -3,15 +3,8 @@ class FormMailer < ApplicationMailer
   layout 'mailer'
 
   def new_form_email
-    # @mail = FormMail.create({
-    #   name: params[:mail].name,
-    #   email: params[:mail].email,
-    #   subject: params[:mail].subject,
-    #   text: params[:mail].text
-    #   })
-
     @mail = params[:mail]
-    mail(to: to_email, subject: "New Message: #{@mail.subject}")
+    mail(to: to_email, subject: "New SiteMessage 📨: #{@mail.subject}")
 
   end
 
