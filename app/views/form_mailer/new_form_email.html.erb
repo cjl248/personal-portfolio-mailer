@@ -1,0 +1,31 @@
+<!-- @email attributes: name, email, subject, text -->
+
+<html>
+  <head>
+    <meta
+      content='text/html; charset=UTF-8'
+      http-equiv="Content-Type" />
+      <style>
+        /* Email styles need to be inline */
+      </style>
+  </head>
+  <body>
+    <h2>You got a new message from <%= @mail.name %>!</h2>
+
+    <h3>Email: </h3>
+    <% if @mail.email %>
+      <p>Their email is <%= @mail.email %></p>
+    <% else %>
+      <p>Their email was NOT included...</p>
+    <% end %>
+
+    <h3>Message: </h3>
+    <div class='email-body'>
+      <% if @mail.text %>
+        <p><%= @mail.text %></p>
+      <% else %>
+        <p>They did not include a message...</p>
+      <% end %>
+    </div>
+  </body>
+</html>

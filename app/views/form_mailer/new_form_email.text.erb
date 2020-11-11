@@ -1,0 +1,17 @@
+<%# @email attributes: name, email, subject, text %>
+
+You got a new message from <%= @mail.name %>!
+
+Email:
+<% if @mail.email %>
+  Their email is <%= @mail.email %>
+<% else %>
+  Their email was NOT included...
+<% end %>
+
+Message:
+<% if @mail.text %>
+  <%= @mail.text %>
+<% else %>
+  They did not include a message...
+<% end %>
