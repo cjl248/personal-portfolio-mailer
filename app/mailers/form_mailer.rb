@@ -1,5 +1,5 @@
 class FormMailer < ApplicationMailer
-  default from: 'c.liendo248@gmail.com'
+  default from: 'cjl248@cornell.edu'
   layout 'mailer'
 
   def new_form_email
