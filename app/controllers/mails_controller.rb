@@ -1,20 +1,20 @@
 class MailsController < ApplicationController
 
   def index
-    mail  = FormMail.all
-    render json: mail
+    @mail  = FormMail.all
+    render json: @mail
   end
 
   def create
-    params = mail_params
-    mail = FormMail.create(params)
-    if (mail)
-      render json: mail, status: 200
+    @mail = FormMail.new(mail_params)
+    if (@mail.save)
+      email = FormMailer.with(mail: @mail).new_form_email
+      # byebug
+      email.deliver_now
+      render json: @mail, status: 202
     else
-      render json: mail.errors
+      render json: @mail.errors, status: 422
     end
-    # @mail_info = FormMail.create(mail_params)
-    # email = FormMailer.form_email(params.name, params.email, params.subject, params.text)
 
   end
 
