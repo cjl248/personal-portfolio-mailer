@@ -8,12 +8,10 @@ class MailsController < ApplicationController
   def create
     @mail = FormMail.new(mail_params)
     if (@mail.save)
-      email = FormMailer.with(mail: @mail).new_form_email
-      # byebug
-      email.deliver_now
-      render json: @mail, status: 202
+      FormMailer.with(mail: @mail).new_form_email.deliver_now
+      render json: { mail: @mail, status: 202 }, status: 202
     else
-      render json: @mail.errors, status: 422
+      render json: { mail: @mail.errors, status: 422 }, status: 422
     end
 
   end
