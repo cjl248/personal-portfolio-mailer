@@ -81,10 +81,6 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
   database: personal_portfolio_mailer_production
-  # username: personal_portfolio_mailer
-  username:
+  username: personal_portfolio_mailer
   password: <%= ENV['PERSONAL_PORTFOLIO_MAILER_DATABASE_PASSWORD'] %>
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 10000
