@@ -81,6 +81,10 @@ test:
 #
 production:
   <<: *default
-  database: personal_portfolio_mailer_production
-  username: personal_portfolio_mailer
+  database: d4j9jgle65889e
+  username: yrttnsljaevnlp
   password: <%= ENV['PERSONAL_PORTFOLIO_MAILER_DATABASE_PASSWORD'] %>
+
+# database: personal_portfolio_mailer_production
+# username: personal_portfolio_mailer
+# password: <%= ENV['PERSONAL_PORTFOLIO_MAILER_DATABASE_PASSWORD'] %>
