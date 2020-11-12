@@ -65,8 +65,8 @@ Rails.application.configure do
     config.action_mailer.delivery_method = :smtp
 
     # => TODO: Set host to backend url once deploying
-    _host = 'http://localhost:3001' # => # TODO
-    config.action_mailer.default_url_options = { host: _host}
+    _host = "personal-portfolio-mailer.herokuapp.com/" # => # TODO
+    config.action_mailer.default_url_options = { host: _host, protocol: 'https'}
 
     # SMTP settings for gmail
     config.action_mailer.smtp_settings = {
