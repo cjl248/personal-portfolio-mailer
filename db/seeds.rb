@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+mails = [
+  { name: "chris", email: "chris@gmail.com", subject: "message1", text: "text1" },
+  { name: "julian", email: "julian@gmail.com", subject: "message2", text: "text for2" },
+  { name: "liendo", email: "liendo@gmail.com", subject: "message3", text: "text for this3" },
+  { name: "elisa", email: "elisa@gmail.com", subject: "message4", text: "text for this message4" },
+]
+mails.map {|mail| FormMail.create(mail)}
