@@ -65,7 +65,7 @@ Rails.application.configure do
     config.action_mailer.delivery_method = :smtp
 
     # => TODO: Set host to backend url once deploying
-    _host = '' # => # TODO
+    _host = 'http://localhost:3001' # => # TODO
     config.action_mailer.default_url_options = { host: _host}
 
     # SMTP settings for gmail
